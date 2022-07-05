@@ -1,0 +1,170 @@
+.formacao{
+  background: #141414;
+  color: #ffff;
+}
+
+.formacao-container{
+  max-width: 1200px;
+  padding: 120px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  position: relative;
+}
+
+.formacao-container:after{
+  content: '';
+  display: block;
+  width: 80px;
+  height: 78.19px;
+  background: url('../img/decoracao.svg') no-repeat center;
+  position: absolute;
+  /* position absolute colocado depois do background */
+  bottom: -50px;
+  left: 10px;
+}
+
+.formacao .subtitulo{
+  color: black;
+  max-width: 5ch;
+  /* ao fazer isso causara um problema na hora de minimizar a pagina pq o subtitulo nao mantera na posicao inicial. Para resolver precisa acessar o global.css e devinir a @media (max-width: 800px) {
+  .subtitulo - tag como max-width: initial !important; ao fazer isso o comando initial !important sempre terá a preferencia*/
+}
+
+.formacao-texto{
+  font-size: 1.5rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+  color: #a3a3a3;
+}
+
+.formacao-texto strong{
+  color: #ffff;
+}
+
+.faculdade-lista{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.faculdade{
+  flex:1;
+  /* evita que a frase acompanhe o tamanho do padding */
+  background: #000;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  /* transforma o span em flex */
+}
+
+.faculdade-tipo{
+  font-size: .875rem;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 10px;
+}
+
+.faculdade-curso{
+  flex:1;
+  /* fazer o element crescer na mesma proporcao */
+  font-size: 1.125rem;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  position: relative;
+  /* criar um elemento de decoracao */
+}
+
+.faculdade-curso::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd0a);
+  position: absolute;
+  left: -24px;
+}
+
+.faculdade-instituicao {
+  font-size: 1.125rem;
+  color: #a3a3a3;
+}
+
+.cursos{
+  margin-bottom: 60px;
+}
+
+.formacao-extra h3{
+  font-size: .875rem;
+  line-height: 1.4;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+  /* foi usado para adicionar o icone em frente da formacao-extra */
+}
+
+.formacao-extra h3::before{
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  /* para tirar o icone do fluxo */
+  left: -36px;
+  top: -4px;
+}
+
+.formacao-extra li{
+  font-size: 1.125rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+
+}
+
+.formacao-extra span{
+  color: #8f8f8f;
+}
+
+.formacao-extra h3::before{
+  position: initial;
+  /* valor estático para manter os elementos sempre em ordem inicial ao se minimizar a pagina*/
+  margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .formacao-container {
+grid-template-columns: 1fr;
+padding: 60px 20px;
+gap: 40px;
+  }
+  .formacao .subtitulo{
+    color: #ffff;
+  }
+  .formacao-texto{
+    font-size: 1.125rem;
+  }
+}
+
+.cursos li{
+  display: flex;
+  justify-content: space-between;
+}
+
+.idiomas li{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cursos h3::before{
+  content: "";
+  background: url("../img/cursos.svg");
+}
+
+.idiomas h3::before{
+  background: url("../img/idiomas.svg") no-repeat center center;
+}
